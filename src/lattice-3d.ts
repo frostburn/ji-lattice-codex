@@ -244,7 +244,7 @@ export function WGP9(equaveIndex = 0): LatticeOptions3D {
 export function primeSphere(
   equaveIndex = 0,
   logs?: number[],
-  searchResolution = 1024
+  searchResolution = 1024,
 ) {
   logs ??= LOG_PRIMES.slice(0, 24);
   const dp = (2 * Math.PI) / searchResolution;

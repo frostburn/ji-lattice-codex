@@ -21,7 +21,7 @@ type Connection = {
 function taxicabDistance(
   a: number[],
   b: number[],
-  tolerance = EPSILON
+  tolerance = EPSILON,
 ): number {
   if (a.length > b.length) {
     return taxicabDistance(b, a);

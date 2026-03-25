@@ -56,7 +56,7 @@ describe('Prime sphere coordinates', () => {
       coords.push(
         `${horizontalCoordinates[i].toFixed(3)}, ${verticalCoordinates[
           i
-        ].toFixed(3)}, ${depthwiseCoordinates[i].toFixed(3)}`
+        ].toFixed(3)}, ${depthwiseCoordinates[i].toFixed(3)}`,
       );
     }
     expect(coords).toEqual([
@@ -76,7 +76,7 @@ describe('Prime sphere coordinates', () => {
       coords.push(
         `${horizontalCoordinates[i].toFixed(3)}, ${verticalCoordinates[
           i
-        ].toFixed(3)}, ${depthwiseCoordinates[i].toFixed(3)}`
+        ].toFixed(3)}, ${depthwiseCoordinates[i].toFixed(3)}`,
       );
     }
     expect(coords).toEqual([

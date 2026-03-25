@@ -290,7 +290,7 @@ export function modVal(
   equaveIndex: number,
   logs: number[],
   divisions: number,
-  searchResolution = 0
+  searchResolution = 0,
 ) {
   if (logs.length > divisions) {
     throw new Error(`Too many logarithms to fit into ${divisions} notes.`);
@@ -361,7 +361,7 @@ export function kraigGrady9(equaveIndex = 0): LatticeOptions {
  */
 export function scottDakota24(
   equaveIndex = 0,
-  logs?: number[]
+  logs?: number[],
 ): LatticeOptions {
   logs ??= LOG_PRIMES.slice(0, 24);
   const mv = modVal(equaveIndex, logs, 24);
@@ -387,7 +387,7 @@ export function scottDakota24(
 export function primeRing72(
   equaveIndex = 0,
   logs?: number[],
-  round = true
+  round = true,
 ): LatticeOptions {
   logs ??= LOG_PRIMES.slice(0, 72);
   const mv = modVal(equaveIndex, logs, 72);
@@ -418,7 +418,7 @@ export function primeRing72(
 export function align(
   options: LatticeOptions,
   horizontalIndex: number,
-  tonnetzIndex?: number
+  tonnetzIndex?: number,
 ) {
   const {horizontalCoordinates, verticalCoordinates} = options;
   const l = Math.max(horizontalCoordinates.length, verticalCoordinates.length);
@@ -472,7 +472,7 @@ function gridline(
   uY: number,
   vX: number,
   vY: number,
-  options: GridOptions
+  options: GridOptions,
 ): Edge | undefined {
   if (!vX && !vY) {
     return undefined;
@@ -636,7 +636,7 @@ export function spanGrid(steps: number[], options: GridOptions) {
           delta2Y * i,
           delta1X,
           delta1Y,
-          options
+          options,
         );
         if (edge) {
           edges.push(edge);

@@ -284,8 +284,8 @@ describe('Coordinate aligner', () => {
       lengths.push(
         Math.hypot(
           options.horizontalCoordinates[i],
-          options.verticalCoordinates[i]
-        )
+          options.verticalCoordinates[i],
+        ),
       );
     }
     align(options, 1);
@@ -297,8 +297,8 @@ describe('Coordinate aligner', () => {
       expect(
         Math.hypot(
           options.horizontalCoordinates[i],
-          options.verticalCoordinates[i]
-        )
+          options.verticalCoordinates[i],
+        ),
       ).toBeCloseTo(lengths[i]);
     }
   });
@@ -310,8 +310,8 @@ describe('Coordinate aligner', () => {
       lengths.push(
         Math.hypot(
           options.horizontalCoordinates[i],
-          options.verticalCoordinates[i]
-        )
+          options.verticalCoordinates[i],
+        ),
       );
     }
     align(options, 1, 2);
@@ -323,15 +323,15 @@ describe('Coordinate aligner', () => {
     expect(
       Math.hypot(
         options.horizontalCoordinates[2],
-        options.verticalCoordinates[2]
-      )
+        options.verticalCoordinates[2],
+      ),
     ).toBeCloseTo(lengths[2]);
     for (let i = 3; i < options.horizontalCoordinates.length; ++i) {
       expect(
         Math.hypot(
           options.horizontalCoordinates[i],
-          options.verticalCoordinates[i]
-        )
+          options.verticalCoordinates[i],
+        ),
       ).toBeCloseTo(lengths[i], -1);
     }
   });
@@ -413,7 +413,7 @@ describe('Grid spanner', () => {
 
   it('spans some primes in 311-TET', () => {
     const p311 = LOG_PRIMES.slice(1, 6).map(l =>
-      Math.round((311 * l) / LOG_PRIMES[0])
+      Math.round((311 * l) / LOG_PRIMES[0]),
     );
     const options: GridOptions = {
       modulus: 311,
