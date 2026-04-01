@@ -6,7 +6,7 @@
     "type": "github",
     "url": "https://github.com/sponsors/frostburn"
   },
-  "main": "dist/index",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
@@ -53,5 +53,13 @@
   },
   "dependencies": {
     "xen-dev-utils": "^0.12.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
   }
 }
