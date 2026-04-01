@@ -54,9 +54,9 @@ export type LatticeOptions = {
   verticalCoordinates: number[];
   /** Maximum prime-wise distance for connecting two inputs. */
   maxDistance?: number;
-  /** Prime-count vectors of connections in addition the the primes. */
+  /** Prime-count vectors of connections in addition to the primes. */
   edgeMonzos?: number[][];
-  /** Flag to merge short edges into a long ones wherever possible. */
+  /** Flag to merge short edges into long ones wherever possible. */
   mergeEdges?: boolean;
 };
 
@@ -109,7 +109,7 @@ export type GridOptions = {
   /** Options for calculating gridlines. */
   gridLines?: GridLineOptions;
 
-  /** Flag to merge short edges into a long ones wherever possible. */
+  /** Flag to merge short edges into long ones wherever possible. */
   mergeEdges?: boolean;
 
   /** Search range for discovering vertices and edges in view. */
@@ -681,7 +681,7 @@ export function spanGrid(steps: number[], options: GridOptions) {
 }
 
 /**
- * Compute the shorest edge corresponding to the given equally tempered difference.
+ * Compute the shortest edge corresponding to the given equally tempered difference.
  * @param step Difference between two equally tempered scale degrees.
  * @param options Options for grid geometry.
  * @returns Array of horizontal and vertical screen coordinates of the shortest edge found.

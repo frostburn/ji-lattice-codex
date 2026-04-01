@@ -1,5 +1,5 @@
 # ji-lattice
-Algorithms for projecting just intonation and equally tempered scales onto the screen.
+Algorithms for projecting just intonation and equally tempered scales onto the screen (in 2D and 3D).
 
 ## Installation ##
 ```bash
@@ -7,12 +7,28 @@ npm i ji-lattice
 ```
 
 ## Documentation
-Below are some examples. The main API documentation is hosted on the project [Github pages](https://xenharmonic-devs.github.io/ji-lattice).
+Below are some examples. The main API documentation is hosted on the project [GitHub Pages](https://xenharmonic-devs.github.io/ji-lattice).
 
 To generate documentation locally run:
 ```bash
 npm run doc
 ```
+
+TypeDoc will generate HTML documentation for the public API from `src/index.ts`.
+
+## API overview
+
+### 2D just intonation lattices
+- `spanLattice(monzos, options)`
+- Coordinate presets/utilities: `kraigGrady9`, `scottDakota24`, `primeRing72`, `align`
+
+### Equal temperament grids
+- `spanGrid(steps, options)`
+- `shortestEdge(step, options)`
+
+### 3D just intonation lattices
+- `spanLattice3D(monzos, options)`
+- Coordinate presets/utilities: `WGP9`, `primeSphere`
 
 ## Just intonation
 ```typescript
@@ -92,6 +108,27 @@ const {vertices, edges} = spanLattice(monzos, options);
     }
   ];
 */
+```
+
+## 3D just intonation
+```typescript
+import {toMonzo} from 'xen-dev-utils';
+import {spanLattice3D, WGP9} from 'ji-lattice';
+
+const chord = ['1/1', '5/4', '3/2', '7/4'];
+const monzos = chord.map(toMonzo);
+
+const options = {
+  ...WGP9(),
+  maxDistance: 1,
+};
+
+const {vertices, edges} = spanLattice3D(monzos, options);
+
+/*
+ * vertices: Array<{ x: number; y: number; z: number; index?: number }>
+ * edges: Array<{ x1: number; y1: number; z1: number; x2: number; y2: number; z2: number; type }>
+ */
 ```
 
 ## Equal temperament
