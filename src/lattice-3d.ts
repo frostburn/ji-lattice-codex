@@ -78,7 +78,7 @@ export function mergeEdges3D(edges: Edge3D[]) {
     if (
       edge.x2 < edge.x1 ||
       (edge.x2 === edge.x1 && edge.y2 < edge.y1) ||
-      (edge.y2 === edge.y1 && edge.z2 < edge.z1)
+      (edge.x2 === edge.x1 && edge.y2 === edge.y1 && edge.z2 < edge.z1)
     ) {
       oriented.push({
         x1: edge.x2,

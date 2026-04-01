@@ -57,6 +57,15 @@ describe('3D edge merger', () => {
       {x1: 0, y1: 0, z1: 0, x2: 2, y2: 2, z2: 2, type: 'primary'},
     ]);
   });
+
+  it('keeps orientation when x increases even if z decreases', () => {
+    const edges = [
+      {x1: 0, y1: 0, z1: 1, x2: 1, y2: 0, z2: 0, type: 'primary' as const},
+    ];
+    expect(mergeEdges3D(edges)).toEqual([
+      {x1: 0, y1: 0, z1: 1, x2: 1, y2: 0, z2: 0, type: 'primary'},
+    ]);
+  });
 });
 
 describe('Prime sphere coordinates', () => {
