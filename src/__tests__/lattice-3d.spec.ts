@@ -66,6 +66,17 @@ describe('3D edge merger', () => {
       {x1: 0, y1: 0, z1: 1, x2: 1, y2: 0, z2: 0, type: 'primary'},
     ]);
   });
+
+  it('does not merge edges with mismatched z slope', () => {
+    const edges = [
+      {x1: 0, y1: 0, z1: 0, x2: 2, y2: 2, z2: 1, type: 'primary' as const},
+      {x1: 2, y1: 2, z1: 1, x2: 3, y2: 3, z2: 2, type: 'primary' as const},
+    ];
+    expect(mergeEdges3D(edges)).toEqual([
+      {x1: 0, y1: 0, z1: 0, x2: 2, y2: 2, z2: 1, type: 'primary'},
+      {x1: 2, y1: 2, z1: 1, x2: 3, y2: 3, z2: 2, type: 'primary'},
+    ]);
+  });
 });
 
 describe('Prime sphere coordinates', () => {

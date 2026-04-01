@@ -111,7 +111,7 @@ export function mergeEdges3D(edges: Edge3D[]) {
         const dex = e.x2 - e.x1;
         const dey = e.y2 - e.y1;
         const dez = e.z2 - e.z1;
-        if (dex * dy === dx * dey && dex * dz === dz * dez) {
+        if (dex * dy === dx * dey && dex * dz === dx * dez) {
           x2 = e.x2;
           y2 = e.y2;
           z2 = e.z2;
