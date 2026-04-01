@@ -50,9 +50,9 @@ export type LatticeOptions3D = {
   depthwiseCoordinates: number[];
   /** Maximum prime-wise distance for connecting two inputs. */
   maxDistance?: number;
-  /** Prime-count vectors of connections in addition the the primes. */
+  /** Prime-count vectors of connections in addition to the primes. */
   edgeMonzos?: number[][];
-  /** Flag to merge short edges into a long ones wherever possible. */
+  /** Flag to merge short edges into long ones wherever possible. */
   mergeEdges?: boolean;
 };
 
@@ -125,7 +125,7 @@ export function mergeEdges3D(edges: Edge3D[]) {
 }
 
 /**
- * Compute vertices and edges for a 2D graph representing the lattice of a musical scale in just intonation.
+ * Compute vertices and edges for a 3D graph representing the lattice of a musical scale in just intonation.
  * @param monzos Prime exponents of the musical intervals in the scale.
  * @param options Options for connecting vertices in the graph.
  * @returns Vertices and edges of the graph.
