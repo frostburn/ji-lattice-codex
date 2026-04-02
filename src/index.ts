@@ -1,7 +1,7 @@
 import {LOG_PRIMES, dot, mmod, monzosEqual, sub} from 'xen-dev-utils';
-import {EdgeType} from './types';
+import type {EdgeType} from './types';
 import {connect, project, unproject} from './utils';
-export * from './types';
+export type * from './types';
 export * from './lattice-3d';
 
 /**
